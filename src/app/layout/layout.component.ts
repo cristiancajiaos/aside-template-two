@@ -1,3 +1,4 @@
+import { OneService } from './../one/one.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private oneService: OneService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  open(): void {
+    this.oneService.openAside();
   }
 
 }
